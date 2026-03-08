@@ -21,6 +21,86 @@ body {
   width: 100%;
   min-height: 100vh;
   background-color: var(--Gray-50);
+  position: relative;
+}
+
+.menu__mobile{
+  position:absolute;
+  background-color: var(--Gray-50);
+  width: 65%;
+  height: 100vh;
+  right: 0px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu__close{
+  align-self: flex-end;
+  width: 20px;
+}
+
+.menu__mobile ul{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  list-style: none;
+  padding-top: 40px;
+}
+
+.menu__mobile ul li{
+  font-size: 0.8rem;
+  color: var(--Gray-500);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.menu__mobile ul .login{
+  gap: 20px;
+  align-items: center;
+}
+
+.menu__mobile div{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.menu__mobile ul img{
+  width: 10px;
+  height: 5px;
+}
+
+.menu__mobile a{
+  color: var(--Gray-500);
+  text-decoration: none;
+}
+
+.menu__mobile ul button{
+  width: 150px;
+  height: 30px;
+  border: 1px solid var(--Gray-500);
+  background-color: var(--Gray-50);
+  border-radius: 10px;
+  color: var(--Gray-500);
+}
+
+.menu__mobile .menu__inside-list{
+  padding-top: 15px;
+}
+
+.menu__mobile .menu__inside-list li{
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ gap: 20px;
+ padding-left: 30px;
+}
+
+.menu__mobile .menu__inside-list img{
+  width: 18px;
+  height: 18px;
 }
 
 .container {
@@ -111,6 +191,10 @@ body {
 .hero__clients img {
   width: 60px;
   height: 20px;
+}
+
+.hidden{
+  display: none;
 }
 
 @media (min-width: 321px) {
