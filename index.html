@@ -15,13 +15,13 @@
 
     <title>Frontend Mentor | Intro section with dropdown navigation</title>
   </head>
-  <body>
+  <body id="body">
     <nav class="menu__mobile hidden">
       <img src="./images/icon-close-menu.svg" alt="Close icon" class="menu__close">
       <ul>
          <li id="features">
          <div>Features <img src="./images/icon-arrow-down.svg" alt="Arrow icon" id="features-arrow"></div> 
-         <ul class="menu__inside-list hidden" id="features-menu" style="display: none;">
+         <ul class="menu__inside-list hidden" id="features-menu">
           <li><img src="./images/icon-todo.svg" alt="Todo icon"> Todo List</li>
           <li><img src="./images/icon-calendar.svg" alt="Calendar icon"> Calendar</li>
           <li><img src="./images/icon-reminders.svg" alt="Reminders icon"> Reminders</li>
@@ -30,7 +30,7 @@
         </li>
          <li id="company">
         <div>Company <img src="./images/icon-arrow-down.svg" alt="Arrow icon" id="company-arrow"></div>  
-        <ul class="menu__inside-list hidden" id="company-menu" style="display: none;">
+        <ul class="menu__inside-list hidden" id="company-menu">
           <li>History</li>
           <li>Our team </li>
           <li>Blog</li>
