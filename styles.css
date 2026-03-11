@@ -118,6 +118,65 @@ html {
   height: 18px;
 }
 
+.desktop__nav{
+  width: 100%;
+  display: flex;
+  padding: 60px;
+  align-items: center;
+  display: none;
+}
+
+.desktop__main-menu{
+  display: flex;
+  width: 50%;
+  align-items: center;
+  gap: 80px;
+}
+
+.desktop__main-menu ul{
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.desktop__main-menu ul div{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.desktop__main-menu ul div img{
+  width: 10px;
+  height: 5px;
+}
+
+.desktop__login{
+  width: 50%;
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  justify-content: right;
+  align-items: center;
+}
+
+.desktop__main-menu ul li,
+.desktop__main-menu ul a,
+.desktop__login li,
+.desktop__login a{
+  color: var(--Gray-500);
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+
+.desktop__login button{
+  width: 100px;
+  height: 40px;
+  border: 1px solid var(--Gray-500);
+  background-color: var(--Gray-50);
+  border-radius: 10px;
+  color: var(--Gray-500);
+}
+
 .container {
   width: 100%;
   max-width: 1100px;
@@ -159,7 +218,7 @@ html {
   width: 100%;
   gap: 20px;
   margin-bottom: 50px;
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
   align-items: center;
 }
@@ -235,23 +294,24 @@ html {
 @media(min-width: 426px){
   .hero__image {
     height: 400px;
-    background-image: url(./images/image-hero-desktop.png);
     background-size: contain;
   }
 }
 
 @media(min-width: 700px){
   .hero__image {
-    height: 550px;
+    height: 450px;
     background-image: url(./images/image-hero-desktop.png);
-    background-size: 100%;
-    background-position: top;
+    background-size: contain;
   }
 
   .hero{
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 50px;
   }
 
   .hero__content{
@@ -260,7 +320,7 @@ html {
     text-align: left;
     align-items: flex-start;
     gap: 40px;
-    padding-top: 60px;
+    padding-top: 100px;
   }
 
   .hero__image{
@@ -274,5 +334,46 @@ html {
   .hero__image{
     order: 2;
     width: 50%;
+  }
+}
+
+@media( min-width: 769px){
+  .container{
+    max-width: 100%;
+  }
+
+  .header__nav{
+    display: none;
+  }
+
+  .desktop__nav{
+    display: flex;
+  }
+}
+
+@media( min-width: 855px){
+ .hero__content{
+  padding-top: 150px;
+ }
+}
+
+@media( min-width: 1024px){
+  .hero__image {
+    height: 550px;
+    background-image: url(./images/image-hero-desktop.png);
+    background-size: 100%;
+    background-position: top;
+  }
+
+  .hero{
+    margin-top: 50px;
+  }
+
+  .hero__content{
+    gap: 45px;
+  }
+
+  .hero__button{
+    margin-bottom: 50px;
   }
 }
