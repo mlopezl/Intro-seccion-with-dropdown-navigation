@@ -2,6 +2,8 @@
 
 :root {
   --Gray-50: hsl(0, 0%, 98%);
+  --White: hsl(0, 0%, 100%);
+  --White-shadow: hsl(0, 0%, 93%);
   --Gray-500: hsl(0, 0%, 41%);
   --Gray-950: hsl(0, 0%, 8%);
 }
@@ -38,8 +40,8 @@ html {
   opacity: 1;
 }
 
-.menu__mobile{
-  position:absolute;
+.menu__mobile {
+  position: absolute;
   background-color: var(--Gray-50);
   width: 65%;
   height: 100vh;
@@ -50,12 +52,12 @@ html {
   z-index: 2;
 }
 
-.menu__close{
+.menu__close {
   align-self: flex-end;
   width: 20px;
 }
 
-.menu__mobile ul{
+.menu__mobile ul {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -63,7 +65,7 @@ html {
   padding-top: 40px;
 }
 
-.menu__mobile ul li{
+.menu__mobile ul li {
   font-size: 0.8rem;
   color: var(--Gray-500);
   display: flex;
@@ -71,28 +73,28 @@ html {
   position: relative;
 }
 
-.menu__mobile ul .login{
+.menu__mobile ul .login {
   gap: 20px;
   align-items: center;
 }
 
-.menu__mobile div{
+.menu__mobile div {
   display: flex;
   gap: 10px;
   align-items: center;
 }
 
-.menu__mobile ul img{
+.menu__mobile ul img {
   width: 10px;
   height: 5px;
 }
 
-.menu__mobile a{
+.menu__mobile a {
   color: var(--Gray-500);
   text-decoration: none;
 }
 
-.menu__mobile ul button{
+.menu__mobile ul button {
   width: 150px;
   height: 30px;
   border: 1px solid var(--Gray-500);
@@ -101,24 +103,24 @@ html {
   color: var(--Gray-500);
 }
 
-.menu__mobile .menu__inside-list{
+.menu__mobile .menu__inside-list {
   padding-top: 15px;
 }
 
-.menu__mobile .menu__inside-list li{
- display: flex;
- flex-direction: row;
- align-items: center;
- gap: 20px;
- padding-left: 30px;
+.menu__mobile .menu__inside-list li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  padding-left: 30px;
 }
 
-.menu__mobile .menu__inside-list img{
+.menu__mobile .menu__inside-list img {
   width: 18px;
   height: 18px;
 }
 
-.desktop__nav{
+.desktop__nav {
   width: 100%;
   display: flex;
   padding: 60px;
@@ -126,31 +128,32 @@ html {
   display: none;
 }
 
-.desktop__main-menu{
+.desktop__main-menu {
   display: flex;
   width: 50%;
   align-items: center;
   gap: 80px;
 }
 
-.desktop__main-menu ul{
+.desktop__main-menu ul {
   display: flex;
   list-style: none;
   gap: 20px;
 }
 
-.desktop__main-menu ul div{
+.desktop__main-menu ul div {
   display: flex;
   align-items: center;
   gap: 5px;
 }
 
-.desktop__main-menu ul div img{
+.desktop__main-menu ul div img {
   width: 10px;
   height: 5px;
+  position: relative;
 }
 
-.desktop__login{
+.desktop__login {
   width: 50%;
   display: flex;
   list-style: none;
@@ -162,13 +165,13 @@ html {
 .desktop__main-menu ul li,
 .desktop__main-menu ul a,
 .desktop__login li,
-.desktop__login a{
+.desktop__login a {
   color: var(--Gray-500);
   text-decoration: none;
   font-size: 0.8rem;
 }
 
-.desktop__login button{
+.desktop__login button {
   width: 100px;
   height: 40px;
   border: 1px solid var(--Gray-500);
@@ -205,6 +208,31 @@ html {
 .header__hamburger {
   width: 30px;
   height: 20px;
+}
+
+.desktop__inside-list {
+  width: 160px;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  top: 80px;
+  left: 140px;
+  background-color: var(--White);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 10px var(--White-shadow);
+}
+
+.desktop__company-list {
+  left: 310px;
+}
+
+.desktop__inside-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .hero,
@@ -275,7 +303,7 @@ html {
   height: 20px;
 }
 
-.hidden{
+.hidden {
   display: none !important;
 }
 
@@ -291,21 +319,21 @@ html {
   }
 }
 
-@media(min-width: 426px){
+@media (min-width: 426px) {
   .hero__image {
     height: 400px;
     background-size: contain;
   }
 }
 
-@media(min-width: 700px){
+@media (min-width: 700px) {
   .hero__image {
     height: 450px;
     background-image: url(./images/image-hero-desktop.png);
     background-size: contain;
   }
 
-  .hero{
+  .hero {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
@@ -314,7 +342,7 @@ html {
     margin-bottom: 50px;
   }
 
-  .hero__content{
+  .hero__content {
     order: 1;
     width: 50%;
     text-align: left;
@@ -323,41 +351,41 @@ html {
     padding-top: 100px;
   }
 
-  .hero__image{
+  .hero__image {
     max-width: 400px;
   }
 
-  .hero__title{
+  .hero__title {
     font-size: 3.2rem;
   }
 
-  .hero__image{
+  .hero__image {
     order: 2;
     width: 50%;
   }
 }
 
-@media( min-width: 769px){
-  .container{
+@media (min-width: 769px) {
+  .container {
     max-width: 100%;
   }
 
-  .header__nav{
+  .header__nav {
     display: none;
   }
 
-  .desktop__nav{
+  .desktop__nav {
     display: flex;
   }
 }
 
-@media( min-width: 855px){
- .hero__content{
-  padding-top: 150px;
- }
+@media (min-width: 855px) {
+  .hero__content {
+    padding-top: 150px;
+  }
 }
 
-@media( min-width: 1024px){
+@media (min-width: 1024px) {
   .hero__image {
     height: 550px;
     background-image: url(./images/image-hero-desktop.png);
@@ -365,15 +393,15 @@ html {
     background-position: top;
   }
 
-  .hero{
+  .hero {
     margin-top: 50px;
   }
 
-  .hero__content{
+  .hero__content {
     gap: 45px;
   }
 
-  .hero__button{
+  .hero__button {
     margin-bottom: 50px;
   }
 }
