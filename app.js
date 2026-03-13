@@ -1,100 +1,101 @@
-const hamburgerIcon = document.querySelector(".header__hamburger");
-const closeIcon = document.querySelector(".menu__close");
-const menuMobile = document.querySelector(".menu__mobile");
-const features = document.getElementById("features");
-const company = document.getElementById("company");
-const featureArrow = document.getElementById("features-arrow");
-const companyArrow = document.getElementById("company-arrow");
-const featureMenu = document.getElementById("features-menu");
-const companyMenu = document.getElementById("company-menu");
-const body = document.getElementById("body");
-const desktopFeatures = document.getElementById("desktop-features");
-const desktopCompany = document.getElementById("desktop-company");
-const desktopFeaturesMenu = document.getElementById("desktop-features-menu");
-const desktopCompanyMenu = document.getElementById("desktop-company-menu");
-const desktopFeaturesArrow = document.getElementById("desktop-features-arrow");
-const desktopCompanyArrow = document.getElementById("desktop-company-arrow");
+const menuToggle = document.querySelector(".header__menu-toggle");
+const closeMenuButton = document.querySelector(".mobile-menu__close");
+const menuMobile = document.querySelector(".mobile-menu");
+const body = document.body;
 
-hamburgerIcon.addEventListener("click", () => {
+const mobileFeatures = document.getElementById("mobile-menu-features");
+const mobileCompany = document.getElementById("mobile-menu-company");
+const mobileFeaturesIcon = document.getElementById("mobile-menu-features-icon");
+const mobileCompanyIcon = document.getElementById("mobile-menu-company-icon");
+const mobileFeaturesSubmenu = document.getElementById("mobile-menu-features-submenu");
+const mobileCompanySubmenu = document.getElementById("mobile-menu-company-submenu");
+
+const desktopFeatures = document.getElementById("desktop-menu-features");
+const desktopCompany = document.getElementById("desktop-menu-company");
+const desktopFeaturesIcon = document.getElementById("desktop-menu-features-icon");
+const desktopCompanyIcon = document.getElementById("desktop-menu-company-icon");
+const desktopFeaturesSubmenu = document.getElementById("desktop-menu-features-submenu");
+const desktopCompanySubmenu = document.getElementById("desktop-menu-company-submenu");
+
+menuToggle.addEventListener("click", () => {
   menuMobile.classList.remove("hidden");
-  body.classList.add("overlay-activo");
+  body.classList.add("overlay-active");
 });
 
-closeIcon.addEventListener("click", () => {
+closeMenuButton.addEventListener("click", () => {
   menuMobile.classList.add("hidden");
-  body.classList.remove("overlay-activo");
-  featureMenu.classList.add("hidden");
-  companyMenu.classList.add("hidden");
-  featureArrow.src = "./images/icon-arrow-down.svg";
-  companyArrow.src = "./images/icon-arrow-down.svg";
+  body.classList.remove("overlay-active");
+  mobileFeaturesSubmenu.classList.add("hidden");
+  mobileCompanySubmenu.classList.add("hidden");
+  mobileFeaturesIcon.src = "./images/icon-arrow-down.svg";
+  mobileCompanyIcon.src = "./images/icon-arrow-down.svg";
 });
 
-features.addEventListener("click", () => {
-  if (!featureMenu.classList.contains("hidden")) {
-    featureMenu.classList.add("hidden");
-    featureArrow.src = "./images/icon-arrow-down.svg";
+mobileFeatures.addEventListener("click", () => {
+  if (!mobileFeaturesSubmenu.classList.contains("hidden")) {
+    mobileFeaturesSubmenu.classList.add("hidden");
+    mobileFeaturesIcon.src = "./images/icon-arrow-down.svg";
   } else {
-    featureMenu.classList.remove("hidden");
-    featureArrow.src = "./images/icon-arrow-up.svg";
-    companyMenu.classList.add("hidden");
-    companyArrow.src = "./images/icon-arrow-down.svg";
+    mobileFeaturesSubmenu.classList.remove("hidden");
+    mobileFeaturesIcon.src = "./images/icon-arrow-up.svg";
+    mobileCompanySubmenu.classList.add("hidden");
+    mobileCompanyIcon.src = "./images/icon-arrow-down.svg";
   }
 });
 
-company.addEventListener("click", () => {
-  if (!companyMenu.classList.contains("hidden")) {
-    companyMenu.classList.add("hidden");
-    companyArrow.src = "./images/icon-arrow-down.svg";
+mobileCompany.addEventListener("click", () => {
+  if (!mobileCompanySubmenu.classList.contains("hidden")) {
+    mobileCompanySubmenu.classList.add("hidden");
+    mobileCompanyIcon.src = "./images/icon-arrow-down.svg";
   } else {
-    companyMenu.classList.remove("hidden");
-    companyArrow.src = "./images/icon-arrow-up.svg";
-    featureMenu.classList.add("hidden");
-    featureArrow.src = "./images/icon-arrow-down.svg";
+    mobileCompanySubmenu.classList.remove("hidden");
+    mobileCompanyIcon.src = "./images/icon-arrow-up.svg";
+    mobileFeaturesSubmenu.classList.add("hidden");
+    mobileFeaturesIcon.src = "./images/icon-arrow-down.svg";
   }
 });
 
 desktopFeatures.addEventListener("click", () => {
-  if (!desktopFeaturesMenu.classList.contains("hidden")) {
-    desktopFeaturesMenu.classList.add("hidden");
-    desktopFeaturesArrow.src = "./images/icon-arrow-down.svg";
+  if (!desktopFeaturesSubmenu.classList.contains("hidden")) {
+    desktopFeaturesSubmenu.classList.add("hidden");
+    desktopFeaturesIcon.src = "./images/icon-arrow-down.svg";
   } else {
-    desktopFeaturesMenu.classList.remove("hidden");
-    desktopFeaturesArrow.src = "./images/icon-arrow-up.svg";
-    desktopCompanyMenu.classList.add("hidden");
-    desktopCompanyArrow.src = "./images/icon-arrow-down.svg";
-    s;
+    desktopFeaturesSubmenu.classList.remove("hidden");
+    desktopFeaturesIcon.src = "./images/icon-arrow-up.svg";
+    desktopCompanySubmenu.classList.add("hidden");
+    desktopCompanyIcon.src = "./images/icon-arrow-down.svg";
   }
 });
 
 desktopCompany.addEventListener("click", () => {
-  if (!desktopCompanyMenu.classList.contains("hidden")) {
-    desktopCompanyMenu.classList.add("hidden");
-    desktopCompanyArrow.src = "./images/icon-arrow-down.svg";
+  if (!desktopCompanySubmenu.classList.contains("hidden")) {
+    desktopCompanySubmenu.classList.add("hidden");
+    desktopCompanyIcon.src = "./images/icon-arrow-down.svg";
   } else {
-    desktopCompanyMenu.classList.remove("hidden");
-    desktopCompanyArrow.src = "./images/icon-arrow-up.svg";
-    desktopFeaturesMenu.classList.add("hidden");
-    desktopFeaturesArrow.src = "./images/icon-arrow-down.svg";
+    desktopCompanySubmenu.classList.remove("hidden");
+    desktopCompanyIcon.src = "./images/icon-arrow-up.svg";
+    desktopFeaturesSubmenu.classList.add("hidden");
+    desktopFeaturesIcon.src = "./images/icon-arrow-down.svg";
   }
 });
 
 document.addEventListener("click", (e) => {
   if (
-    !closeIcon.contains(e.target) &&
+    !closeMenuButton.contains(e.target) &&
     !menuMobile.contains(e.target) &&
-    !hamburgerIcon.contains(e.target) &&
+    !menuToggle.contains(e.target) &&
     !desktopFeatures.contains(e.target) &&
     !desktopCompany.contains(e.target)
   ) {
     menuMobile.classList.add("hidden");
-    body.classList.remove("overlay-activo");
-    featureMenu.classList.add("hidden");
-    companyMenu.classList.add("hidden");
-    featureArrow.src = "./images/icon-arrow-down.svg";
-    companyArrow.src = "./images/icon-arrow-down.svg";
-    desktopFeaturesMenu.classList.add("hidden");
-    desktopCompanyMenu.classList.add("hidden");
-    desktopFeaturesArrow.src = "./images/icon-arrow-down.svg";
-    desktopCompanyArrow.src = "./images/icon-arrow-down.svg";
+    body.classList.remove("overlay-active");
+    mobileFeaturesSubmenu.classList.add("hidden");
+    mobileCompanySubmenu.classList.add("hidden");
+    mobileFeaturesIcon.src = "./images/icon-arrow-down.svg";
+    mobileCompanyIcon.src = "./images/icon-arrow-down.svg";
+    desktopFeaturesSubmenu.classList.add("hidden");
+    desktopCompanySubmenu.classList.add("hidden");
+    desktopFeaturesIcon.src = "./images/icon-arrow-down.svg";
+    desktopCompanyIcon.src = "./images/icon-arrow-down.svg";
   }
 });

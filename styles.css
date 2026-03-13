@@ -19,14 +19,14 @@ html {
   font-family: "Epilogue", sans-serif;
 }
 
-#body {
+body {
   width: 100%;
   min-height: 100vh;
   background-color: var(--Gray-50);
   position: relative;
 }
 
-#body::after {
+body::after {
   content: "";
   position: fixed;
   inset: 0;
@@ -36,28 +36,32 @@ html {
   transition: opacity 0.3s;
 }
 
-#body.overlay-activo::after {
+body.overlay-active::after {
   opacity: 1;
 }
 
-.menu__mobile {
+.mobile-menu {
   position: absolute;
   background-color: var(--Gray-50);
   width: 65%;
   height: 100vh;
-  right: 0px;
+  right: 0;
   padding: 15px;
   display: flex;
   flex-direction: column;
   z-index: 2;
 }
 
-.menu__close {
+.mobile-menu__close {
   align-self: flex-end;
   width: 20px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
 }
 
-.menu__mobile ul {
+.mobile-menu__list {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -65,7 +69,7 @@ html {
   padding-top: 40px;
 }
 
-.menu__mobile ul li {
+.mobile-menu__item {
   font-size: 0.8rem;
   color: var(--Gray-500);
   display: flex;
@@ -73,41 +77,50 @@ html {
   position: relative;
 }
 
-.menu__mobile ul .login {
-  gap: 20px;
+.mobile-menu__login {
+  display: flex;
   align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  font-size: 0.8rem;
+  color: var(--Gray-500);
 }
 
-.menu__mobile div {
+.mobile-menu__toggle {
   display: flex;
   gap: 10px;
   align-items: center;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
 }
 
-.menu__mobile ul img {
+.mobile-menu__list a {
+  font-size: 0.8rem;
+}
+
+.mobile-menu__toggle:focus {
+  outline: none;
+}
+
+.mobile-menu__toggle-icon {
   width: 10px;
   height: 5px;
 }
 
-.menu__mobile a {
-  color: var(--Gray-500);
-  text-decoration: none;
-}
-
-.menu__mobile ul button {
-  width: 150px;
-  height: 30px;
-  border: 1px solid var(--Gray-500);
-  background-color: var(--Gray-50);
-  border-radius: 10px;
-  color: var(--Gray-500);
-}
-
-.menu__mobile .menu__inside-list {
+.mobile-menu__submenu {
   padding-top: 15px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.menu__mobile .menu__inside-list li {
+.mobile-menu__submenu li {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -115,9 +128,23 @@ html {
   padding-left: 30px;
 }
 
-.menu__mobile .menu__inside-list img {
+.mobile-menu__submenu img {
   width: 18px;
   height: 18px;
+}
+
+.mobile-menu a {
+  color: var(--Gray-500);
+  text-decoration: none;
+}
+
+.mobile-menu__login button {
+  width: 150px;
+  height: 30px;
+  border: 1px solid var(--Gray-500);
+  background-color: var(--Gray-50);
+  border-radius: 10px;
+  color: var(--Gray-500);
 }
 
 .desktop__nav {
@@ -141,13 +168,24 @@ html {
   gap: 20px;
 }
 
-.desktop__main-menu ul div {
+.desktop-menu__toggle {
   display: flex;
   align-items: center;
   gap: 5px;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
 }
 
-.desktop__main-menu ul div img {
+.desktop-menu__toggle:focus {
+  outline: none;
+}
+
+.desktop-menu__toggle-icon {
   width: 10px;
   height: 5px;
   position: relative;
@@ -165,7 +203,8 @@ html {
 .desktop__main-menu ul li,
 .desktop__main-menu ul a,
 .desktop__login li,
-.desktop__login a {
+.desktop__login a,
+.desktop-menu__toggle {
   color: var(--Gray-500);
   text-decoration: none;
   font-size: 0.8rem;
@@ -173,10 +212,8 @@ html {
 
 .desktop__main-menu a:hover,
 .desktop__main-menu a:focus,
-.desktop-features div:hover,
-.desktop-features div:focus,
-.desktop-company div:hover,
-.desktop-company div:focus{
+.desktop-menu__toggle:hover,
+.desktop-menu__toggle:focus {
   outline: none;
   color: var(--Gray-950);
   transition: all 400ms ease;
@@ -193,14 +230,14 @@ html {
 }
 
 .desktop__login li a:hover,
-.desktop__login li a:focus{
+.desktop__login li a:focus {
   color: var(--Gray-950);
   outline: none;
   transition: all 300ms ease;
 }
 
 .desktop__login button:hover,
-.desktop__login button:focus{
+.desktop__login button:focus {
   color: var(--Gray-950);
   border-color: var(--Gray-950);
   transition: all 400ms ease;
@@ -232,12 +269,21 @@ html {
   height: 30px;
 }
 
-.header__hamburger {
+.header__menu-toggle {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
   width: 30px;
   height: 20px;
 }
 
-.desktop__inside-list {
+.header__menu-toggle img {
+  width: 100%;
+  height: 100%;
+}
+
+.desktop-menu__submenu {
   width: 160px;
   height: 180px;
   display: flex;
@@ -252,11 +298,11 @@ html {
   box-shadow: 0px 0px 10px 10px var(--White-shadow);
 }
 
-.desktop__company-list {
+.desktop-menu__submenu--company {
   left: 310px;
 }
 
-.desktop__inside-list li {
+.desktop-menu__submenu li {
   display: flex;
   align-items: center;
   gap: 10px;

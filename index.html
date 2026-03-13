@@ -11,28 +11,26 @@
       href="./images/favicon-32x32.png"
     />
     <link rel="stylesheet" href="./styles.css" />
-    <link rel="stylesheet" href="styles.css" />
 
     <title>Frontend Mentor | Intro section with dropdown navigation</title>
   </head>
-  <body id="body">
-    <nav class="menu__mobile hidden">
-      <img
-        src="./images/icon-close-menu.svg"
-        alt="Close icon"
-        class="menu__close"
-      />
-      <ul>
-        <li id="features">
-          <div>
+  <body>
+    <nav class="mobile-menu hidden" aria-label="Mobile navigation">
+      <button class="mobile-menu__close" type="button" aria-label="Close menu">
+        <img src="./images/icon-close-menu.svg" alt="" />
+      </button>
+      <ul class="mobile-menu__list">
+        <li id="mobile-menu-features" class="mobile-menu__item">
+          <button class="mobile-menu__toggle" type="button">
             Features
             <img
               src="./images/icon-arrow-down.svg"
-              alt="Arrow icon"
-              id="features-arrow"
+              alt="Toggle features"
+              id="mobile-menu-features-icon"
+              class="mobile-menu__toggle-icon"
             />
-          </div>
-          <ul class="menu__inside-list hidden" id="features-menu">
+          </button>
+          <ul class="mobile-menu__submenu hidden" id="mobile-menu-features-submenu">
             <li>
               <img src="./images/icon-todo.svg" alt="Todo icon" /> Todo List
             </li>
@@ -45,21 +43,22 @@
               Reminders
             </li>
             <li>
-              <img src="./images/icon-planning.svg" alt="Planing icon" />
+              <img src="./images/icon-planning.svg" alt="Planning icon" />
               Planning
             </li>
           </ul>
         </li>
-        <li id="company">
-          <div>
+        <li id="mobile-menu-company" class="mobile-menu__item">
+          <button class="mobile-menu__toggle" type="button">
             Company
             <img
               src="./images/icon-arrow-down.svg"
-              alt="Arrow icon"
-              id="company-arrow"
+              alt="Toggle company"
+              id="mobile-menu-company-icon"
+              class="mobile-menu__toggle-icon"
             />
-          </div>
-          <ul class="menu__inside-list hidden" id="company-menu">
+          </button>
+          <ul class="mobile-menu__submenu hidden" id="mobile-menu-company-submenu">
             <li>History</li>
             <li>Our team</li>
             <li>Blog</li>
@@ -67,7 +66,7 @@
         </li>
         <li><a href="">Careers</a></li>
         <li><a href="">About</a></li>
-        <li class="login">
+        <li class="mobile-menu__login">
           Login
           <button>Register</button>
         </li>
@@ -77,31 +76,30 @@
       <header class="header">
         <nav class="header__nav">
           <img src="./images/logo.svg" alt="Snap Logo" class="header__logo" />
-          <img
-            src="./images/icon-menu.svg"
-            alt="Menu Icon"
-            class="header__hamburger"
-          />
+          <button class="header__menu-toggle" type="button" aria-label="Open menu">
+            <img src="./images/icon-menu.svg" alt="" />
+          </button>
         </nav>
         <nav class="desktop__nav">
           <div class="desktop__main-menu">
             <img src="./images/logo.svg" alt="Snap Logo" class="header__logo" />
             <ul>
-              <li id="desktop-features" class="desktop-features">
-                <div tabindex="0">
+              <li id="desktop-menu-features" class="desktop-menu__item">
+                <button class="desktop-menu__toggle" type="button">
                   Features
                   <img
                     src="./images/icon-arrow-down.svg"
-                    alt="Arrow icon"
-                    id="desktop-features-arrow"
+                    alt="Toggle features"
+                    id="desktop-menu-features-icon"
+                    class="desktop-menu__toggle-icon"
                   />
-                </div>
+                </button>
                 <ul
-                  class="desktop__inside-list hidden"
-                  id="desktop-features-menu"
+                  class="desktop-menu__submenu hidden"
+                  id="desktop-menu-features-submenu"
                 >
                   <li>
-                    <img src="./images/icon-todo.svg" alt="Todo icon" /> 
+                    <img src="./images/icon-todo.svg" alt="Todo icon" />
                     Todo List
                   </li>
                   <li>
@@ -116,23 +114,24 @@
                     Reminders
                   </li>
                   <li>
-                    <img src="./images/icon-planning.svg" alt="Planing icon" />
+                    <img src="./images/icon-planning.svg" alt="Planning icon" />
                     Planning
                   </li>
                 </ul>
               </li>
-              <li id="desktop-company" class="desktop-company">
-                <div tabindex="0">
+              <li id="desktop-menu-company" class="desktop-menu__item">
+                <button class="desktop-menu__toggle" type="button">
                   Company
                   <img
                     src="./images/icon-arrow-down.svg"
-                    alt="Arrow icon"
-                    id="desktop-company-arrow"
+                    alt="Toggle company"
+                    id="desktop-menu-company-icon"
+                    class="desktop-menu__toggle-icon"
                   />
-                </div>
+                </button>
                 <ul
-                  class="desktop__inside-list desktop__company-list hidden"
-                  id="desktop-company-menu"
+                  class="desktop-menu__submenu desktop-menu__submenu--company hidden"
+                  id="desktop-menu-company-submenu"
                 >
                   <li>History</li>
                   <li>Our team</li>
