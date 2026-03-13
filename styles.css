@@ -171,6 +171,18 @@ html {
   font-size: 0.8rem;
 }
 
+.desktop__main-menu a:hover,
+.desktop__main-menu a:focus,
+.desktop-features div:hover,
+.desktop-features div:focus,
+.desktop-company div:hover,
+.desktop-company div:focus{
+  outline: none;
+  color: var(--Gray-950);
+  transition: all 400ms ease;
+  cursor: pointer;
+}
+
 .desktop__login button {
   width: 100px;
   height: 40px;
@@ -178,6 +190,21 @@ html {
   background-color: var(--Gray-50);
   border-radius: 10px;
   color: var(--Gray-500);
+}
+
+.desktop__login li a:hover,
+.desktop__login li a:focus{
+  color: var(--Gray-950);
+  outline: none;
+  transition: all 300ms ease;
+}
+
+.desktop__login button:hover,
+.desktop__login button:focus{
+  color: var(--Gray-950);
+  border-color: var(--Gray-950);
+  transition: all 400ms ease;
+  cursor: pointer;
 }
 
 .container {
@@ -283,12 +310,20 @@ html {
 .hero__button {
   width: 120px;
   height: 40px;
-  border: none;
+  border: 1px solid var(--Gray-500);
   background-color: var(--Gray-950);
   color: var(--Gray-50);
   border-radius: 10px;
   margin-bottom: 20px;
   font-weight: bold;
+}
+
+.hero__button:hover,
+.hero__button:focus {
+  background-color: var(--Gray-50);
+  color: var(--Gray-950);
+  outline: none;
+  transition: all 300ms ease;
 }
 
 .hero__clients {
