@@ -17,65 +17,94 @@ const desktopCompanyIcon = document.getElementById("desktop-menu-company-icon");
 const desktopFeaturesSubmenu = document.getElementById("desktop-menu-features-submenu");
 const desktopCompanySubmenu = document.getElementById("desktop-menu-company-submenu");
 
-menuToggle.addEventListener("click", () => {
+function showMenuMobile() {
   menuMobile.classList.remove("hidden");
   body.classList.add("overlay-active");
-});
+}
 
-closeMenuButton.addEventListener("click", () => {
+function hideMenuMobile() {
   menuMobile.classList.add("hidden");
   body.classList.remove("overlay-active");
+}
+    
+menuToggle.addEventListener("click", () => {
+ showMenuMobile();
+});
+
+function hiddenAllSubmenus() {
   mobileFeaturesSubmenu.classList.add("hidden");
   mobileCompanySubmenu.classList.add("hidden");
   mobileFeaturesIcon.src = "./images/icon-arrow-down.svg";
   mobileCompanyIcon.src = "./images/icon-arrow-down.svg";
+}
+
+closeMenuButton.addEventListener("click", () => {
+  hideMenuMobile();
+  hiddenAllSubmenus();
 });
+
+function showMobileFeaturesSubmenu() {
+  mobileFeaturesSubmenu.classList.remove("hidden");
+  mobileFeaturesIcon.src = "./images/icon-arrow-up.svg";
+}
+
+function showMobileCompanySubmenu() {
+  mobileCompanySubmenu.classList.remove("hidden");
+  mobileCompanyIcon.src = "./images/icon-arrow-up.svg";
+}
+
 
 mobileFeatures.addEventListener("click", () => {
   if (!mobileFeaturesSubmenu.classList.contains("hidden")) {
-    mobileFeaturesSubmenu.classList.add("hidden");
-    mobileFeaturesIcon.src = "./images/icon-arrow-down.svg";
+    hiddenAllSubmenus();
   } else {
-    mobileFeaturesSubmenu.classList.remove("hidden");
-    mobileFeaturesIcon.src = "./images/icon-arrow-up.svg";
-    mobileCompanySubmenu.classList.add("hidden");
-    mobileCompanyIcon.src = "./images/icon-arrow-down.svg";
+    hiddenAllSubmenus();
+    showMobileFeaturesSubmenu();
   }
 });
 
 mobileCompany.addEventListener("click", () => {
   if (!mobileCompanySubmenu.classList.contains("hidden")) {
-    mobileCompanySubmenu.classList.add("hidden");
-    mobileCompanyIcon.src = "./images/icon-arrow-down.svg";
+    hiddenAllSubmenus();
   } else {
-    mobileCompanySubmenu.classList.remove("hidden");
-    mobileCompanyIcon.src = "./images/icon-arrow-up.svg";
-    mobileFeaturesSubmenu.classList.add("hidden");
-    mobileFeaturesIcon.src = "./images/icon-arrow-down.svg";
+    hiddenAllSubmenus();
+    showMobileCompanySubmenu();
   }
 });
 
+function hideAllDesktopSubmenus() {
+  desktopFeaturesSubmenu.classList.add("hidden");
+  desktopCompanySubmenu.classList.add("hidden");
+  desktopFeaturesIcon.src = "./images/icon-arrow-down.svg";
+  desktopCompanyIcon.src = "./images/icon-arrow-down.svg";
+}
+
+function showDesktopFeaturesSubmenu() {
+  desktopFeaturesSubmenu.classList.remove("hidden");
+  desktopFeaturesIcon.src = "./images/icon-arrow-up.svg";
+}
+
+function showDesktopCompanySubmenu() {
+  desktopCompanySubmenu.classList.remove("hidden");
+  desktopCompanyIcon.src = "./images/icon-arrow-up.svg";
+}
+
+
 desktopFeatures.addEventListener("click", () => {
   if (!desktopFeaturesSubmenu.classList.contains("hidden")) {
-    desktopFeaturesSubmenu.classList.add("hidden");
-    desktopFeaturesIcon.src = "./images/icon-arrow-down.svg";
+    hideAllDesktopSubmenus();
   } else {
-    desktopFeaturesSubmenu.classList.remove("hidden");
-    desktopFeaturesIcon.src = "./images/icon-arrow-up.svg";
-    desktopCompanySubmenu.classList.add("hidden");
-    desktopCompanyIcon.src = "./images/icon-arrow-down.svg";
+    hideAllDesktopSubmenus();
+    showDesktopFeaturesSubmenu();
   }
 });
 
 desktopCompany.addEventListener("click", () => {
   if (!desktopCompanySubmenu.classList.contains("hidden")) {
-    desktopCompanySubmenu.classList.add("hidden");
-    desktopCompanyIcon.src = "./images/icon-arrow-down.svg";
+    hideAllDesktopSubmenus();
   } else {
-    desktopCompanySubmenu.classList.remove("hidden");
-    desktopCompanyIcon.src = "./images/icon-arrow-up.svg";
-    desktopFeaturesSubmenu.classList.add("hidden");
-    desktopFeaturesIcon.src = "./images/icon-arrow-down.svg";
+    hideAllDesktopSubmenus();
+    showDesktopCompanySubmenu();
   }
 });
 
@@ -87,15 +116,8 @@ document.addEventListener("click", (e) => {
     !desktopFeatures.contains(e.target) &&
     !desktopCompany.contains(e.target)
   ) {
-    menuMobile.classList.add("hidden");
-    body.classList.remove("overlay-active");
-    mobileFeaturesSubmenu.classList.add("hidden");
-    mobileCompanySubmenu.classList.add("hidden");
-    mobileFeaturesIcon.src = "./images/icon-arrow-down.svg";
-    mobileCompanyIcon.src = "./images/icon-arrow-down.svg";
-    desktopFeaturesSubmenu.classList.add("hidden");
-    desktopCompanySubmenu.classList.add("hidden");
-    desktopFeaturesIcon.src = "./images/icon-arrow-down.svg";
-    desktopCompanyIcon.src = "./images/icon-arrow-down.svg";
+    hideMenuMobile();
+    hiddenAllSubmenus();
+    hideAllDesktopSubmenus();
   }
 });
